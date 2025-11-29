@@ -1,9 +1,45 @@
-## Notes ##
 ---------------------------
-
-> Topics
+## Notes ## 
+---------------------------
+---------------------------
+# 15-DAY #
+---------------------------
+> Topics (5 DAY)
     > Phase 1: PHP 8.2+
-    > Phase 2: MySQL
-    > Phase 3: Redis / Elastisearch
-    > Phase 4: Testing with PHPUnit in Slim Framework
-    > Phase 5: REST API Design
+        // Foundation
+        > Basic Syntax & Output
+        > Variables & Constants
+        > Data Types (the strictness check)
+        > Operators
+        > Conditionals
+        > Loops
+        > Array Fundamentals
+        > Array Functions
+        > Function Definition
+        > Scope
+        > Advanced Functions
+
+        // OOP
+        > Class Anatomy
+        > Inheritance & Abstraction
+        > Traits
+        > Magic Methods
+        > Modern OOP Features
+        
+        // Data & Web Interactions
+        > HTTP Basics
+        > JSON Handling
+        > File System
+
+        // Database Interaction (PDO)
+        > PDO (PHP Data Objects)
+
+        // Advanced & Ecosystem
+        > Error Handling
+        > Composer
+        > Date & Time
+
+    > Phase 2: MySQL (2 DAY)
+    > Phase 3: Redis / Elastisearch (3 DAY)
+    > Phase 4: Testing with PHPUnit | Mockery (3 DAY)
+    > Phase 5: REST API Design (2 DAY)
