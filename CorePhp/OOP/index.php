@@ -2,8 +2,11 @@
 
 require 'BankAccount.php';
 require 'SavingsAccount.php';
+require 'Shoe.php';
+require 'CryptoPayment.php';
+require 'StripePayment.php';
 
-$myAccount = new BankAccount("Vedat Cinbat", 100.00);
+/*$myAccount = new SavingsAccount("Vedat Cinbat", 100.00);
 
 echo BankAccount::CURRENCY;
 
@@ -19,4 +22,37 @@ $savings->deposit(50);
 
 $savings->applyInterest();
 
-echo $savings->getBalance();
+echo $savings->getBalance();*/
+
+/*$sneaker = new Shoe("Nike Air", 120.00, 42);
+$sneaker = new Shoe("Adidas Max", 230.00, 41);
+
+echo $sneaker->getDetails();*/
+
+
+function handleCheckout(PaymentProvider $provider, float $amount): void {
+    $provider->logTransaction();
+    echo $provider->process($amount);
+};
+
+$myCard = new StripePayment();
+$myWallet = new CryptoPayment();
+
+handleCheckout($myCard, 50.00);
+handleCheckout($myWallet, 100.00);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

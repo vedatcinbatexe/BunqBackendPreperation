@@ -1,6 +1,6 @@
 <?php
 
-class BankAccount {
+abstract class BankAccount {
     public const CURRENCY = 'USD';
 
     public string $accountHolder;
@@ -23,6 +23,9 @@ class BankAccount {
             $this->balance += $amount;
         }
     }
+
+    // Abstract Method: Every child MUST create this function
+    abstract public function calculateMonthlyFee(): float;
 
     public function getBalance(): float {
         return $this->balance;
