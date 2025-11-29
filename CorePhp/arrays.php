@@ -36,6 +36,6 @@ print_r($allTransactions);
 $defaultOptions = ['color' => 'blue', 'size' => 'M'];
 $userOptions = ['color' => 'red'];
 
-$finalConfig = [...$defaultOptions, ...$userOptions]; 
+$finalConfig = array_merge($defaultOptions, $userOptions);
 
 print_r($finalConfig); // Color will be RED

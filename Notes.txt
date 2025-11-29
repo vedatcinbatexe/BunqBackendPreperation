@@ -20,8 +20,9 @@
         [+] Advanced Functions
 
         // OOP
-        > Class Anatomy
-        > Inheritance & Abstraction
+        [+] Class Anatomy
+        [+] Inheritance & Abstraction
+        [+] Interfaces & Polymorphism
         > Traits
         > Magic Methods
         > Modern OOP Features

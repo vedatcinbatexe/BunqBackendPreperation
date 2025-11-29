@@ -5,6 +5,9 @@ require 'SavingsAccount.php';
 require 'Shoe.php';
 require 'CryptoPayment.php';
 require 'StripePayment.php';
+require 'EmailNotifier.php';
+require 'SmsNotifier.php';
+require 'UserController.php';
 
 /*$myAccount = new SavingsAccount("Vedat Cinbat", 100.00);
 
@@ -30,7 +33,7 @@ $sneaker = new Shoe("Adidas Max", 230.00, 41);
 echo $sneaker->getDetails();*/
 
 
-function handleCheckout(PaymentProvider $provider, float $amount): void {
+/*function handleCheckout(PaymentProvider $provider, float $amount): void {
     $provider->logTransaction();
     echo $provider->process($amount);
 };
@@ -39,13 +42,18 @@ $myCard = new StripePayment();
 $myWallet = new CryptoPayment();
 
 handleCheckout($myCard, 50.00);
-handleCheckout($myWallet, 100.00);
+handleCheckout($myWallet, 100.00);*/
 
 
+$emailService = new EmailNotifier();
+$userA = new UserController($emailService);
+$userA->notifyUser("Welcome!");
 
+echo "\n";
 
-
-
+$smsService = new SmsNotifier();
+$userB = new UserController($smsService);
+$userB->notifyUser("Your code is 1234!");
 
 
 
