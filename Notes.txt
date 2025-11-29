@@ -13,11 +13,11 @@
         [+] Operators
         [+] Conditionals
         [+] Loops
-        > Array Fundamentals
-        > Array Functions
-        > Function Definition
-        > Scope
-        > Advanced Functions
+        [+] Array Fundamentals
+        [+] Array Functions
+        [+] Function Definition
+        [+] Scope
+        [+] Advanced Functions
 
         // OOP
         > Class Anatomy
