@@ -27,7 +27,7 @@
             - Traits are essentially compiler copy-past
             - They allow you to define a block of code (methods and properties) and "inject" it into any class, regardless of its parent
         [+] Magic Methods
-        > Modern OOP Features
+        [+] Modern OOP Features
         
         // Data & Web Interactions
         > HTTP Basics
