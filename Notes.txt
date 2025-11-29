@@ -1,0 +1,9 @@
+## Notes ##
+---------------------------
+
+> Topics
+    > Phase 1: PHP 8.2+
+    > Phase 2: MySQL
+    > Phase 3: Redis / Elastisearch
+    > Phase 4: Testing with PHPUnit in Slim Framework
+    > Phase 5: REST API Design
