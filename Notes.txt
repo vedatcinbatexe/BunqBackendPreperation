@@ -7,12 +7,12 @@
 > Topics (5 DAY)
     > Phase 1: PHP 8.2+
         // Foundation
-        > Basic Syntax & Output
-        > Variables & Constants
-        > Data Types (the strictness check)
-        > Operators
-        > Conditionals
-        > Loops
+        [+] Basic Syntax & Output
+        [+] Variables & Constants
+        [+] Data Types (the strictness check)
+        [+] Operators
+        [+] Conditionals
+        [+] Loops
         > Array Fundamentals
         > Array Functions
         > Function Definition
