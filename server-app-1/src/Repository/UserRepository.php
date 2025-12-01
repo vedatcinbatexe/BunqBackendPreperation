@@ -2,23 +2,22 @@
 
 namespace App\Repository;
 
+use App\Model\User;
 use PDO;
 
 class UserRepository {
     public function __construct(private PDO $pdo) {}
 
     public function findAll(): array {
-        $stmt = $this->pdo->query("SELECT * FROM users");
-        return $stmt->fetchAll();
+        return User::all()->toArray();
     }
 
     public function create(string $username, string $email): int {
-        $stmt = $this->pdo->prepare("INSERT INTO users (username, email) VALUES (:username, :email)");
-        $stmt->execute([
+        $user = User::create([
             'username' => $username,
             'email' => $email
         ]);
 
-        return $this->pdo->lastInsertId();
+        return $user->id;
     }
 }

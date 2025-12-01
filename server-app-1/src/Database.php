@@ -7,9 +7,9 @@ use PDOException;
 
 class Database {
     private string $host = '127.0.0.1';
-    private string $dbname = 'testDb';
+    private string $dbname = 'bunq_test';
     private string $user = 'root';
-    private string $pass = 'localHostPassword';
+    private string $pass = 'test';
 
     public function getConnection(): PDO {
         $dsn = "mysql:host=$this->host;dbname=$this->dbname;charset=utf8mb4";

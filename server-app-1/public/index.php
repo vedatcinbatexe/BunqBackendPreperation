@@ -1,10 +1,12 @@
 <?php
 
+use App\Controller\SongController;
 use DI\ContainerBuilder;
 use Slim\Factory\AppFactory;
 use Slim\Routing\RouteCollectorProxy;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
+use Illuminate\Database\Capsule\Manager as Capsule;
 
 // Controllers and Middlewares
 use App\Controller\UserController;
@@ -12,6 +14,22 @@ use App\Database;
 
 // 1. Load Composer Autoloader
 require __DIR__ . '/../vendor/autoload.php';
+
+$capsule = new Capsule;
+$capsule->addConnection([
+    'driver'    => 'mysql',
+    'host'      => 'localhost',
+    'port'      => 3306,
+    'database'  => 'bunq_test',
+    'username'  => 'root',
+    'password'  => 'test',
+    'charset'   => 'utf8mb4',
+    'collation' => 'utf8mb4_unicode_ci',
+    'prefix'    => '',
+]);
+
+$capsule->setAsGlobal();
+$capsule->bootEloquent();
 
 // Setup Container Builder
 $containerBuilder = new ContainerBuilder();
@@ -23,7 +41,8 @@ $containerBuilder->addDefinitions([
     },
 
     // Interface Binding
-    \App\Service\IUserService::class => \DI\autowire(\App\Service\UserService::class)
+        \App\Service\IUserService::class => \DI\autowire(\App\Service\UserService::class),
+        \App\Service\ISongService::class => \DI\autowire(\App\Service\SongService::class)
     ]
 );
 
@@ -74,5 +93,6 @@ $app->post('/users', function (Request $request, Response $response, array $args
 
 $app->get('/users', [UserController::class, 'index']);
 $app->post('/register', [UserController::class, 'create']);
+$app->get('/songs', [SongController::class, 'allSongs']);
 
 $app->run();
