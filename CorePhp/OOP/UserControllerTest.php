@@ -1,7 +1,7 @@
 <?php
 require_once 'NotifierInterface.php';
 
-class UserController {
+class UserControllerTest {
     public function __construct(
         private NotifierInterface $notifier,
     ) {}

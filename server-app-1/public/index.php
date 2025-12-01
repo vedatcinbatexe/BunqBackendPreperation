@@ -1,20 +1,33 @@
 <?php
-use DI\Container;
+
+use DI\ContainerBuilder;
+use Slim\Factory\AppFactory;
+use Slim\Routing\RouteCollectorProxy;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
-use Slim\Factory\AppFactory;
+
+// Controllers and Middlewares
+use App\Controller\UserController;
 use App\Database;
 
 // 1. Load Composer Autoloader
 require __DIR__ . '/../vendor/autoload.php';
 
-$container = new Container();
+// Setup Container Builder
+$containerBuilder = new ContainerBuilder();
 
-$container->set('db', function () {
-    $db = new Database();
-    return $db->getConnection();
-});
+$containerBuilder->addDefinitions([
+    // Define the Database Connection
+    PDO::class => function () {
+        return (new Database())->getConnection();
+    },
 
+    // Interface Binding
+    \App\Service\IUserService::class => \DI\autowire(\App\Service\UserService::class)
+    ]
+);
+
+$container = $containerBuilder->build();
 AppFactory::setContainer($container);
 $app = AppFactory::create();
 
@@ -22,7 +35,7 @@ $app->addBodyParsingMiddleware();
 $app->AddErrorMiddleware(true, true, true);
 
 // ROUTES
-$app->get('/users', function (Request $request, Response $response, array $args) {
+/*$app->get('/users', function (Request $request, Response $response, array $args) {
     $pdo = $this->get('db');
 
     $stmt = $pdo->query("SELECT * FROM users");
@@ -57,5 +70,9 @@ $app->post('/users', function (Request $request, Response $response, array $args
     $response->getBody()->write($payload);
     return $response->withHeader('Content-Type', 'application/json');
 });
+*/
+
+$app->get('/users', [UserController::class, 'index']);
+$app->post('/register', [UserController::class, 'create']);
 
 $app->run();

@@ -7,7 +7,7 @@ require 'CryptoPayment.php';
 require 'StripePayment.php';
 require 'EmailNotifier.php';
 require 'SmsNotifier.php';
-require 'UserController.php';
+require 'UserControllerTest.php';
 
 /*$myAccount = new SavingsAccount("Vedat Cinbat", 100.00);
 
@@ -46,13 +46,13 @@ handleCheckout($myWallet, 100.00);*/
 
 
 $emailService = new EmailNotifier();
-$userA = new UserController($emailService);
+$userA = new UserControllerTest($emailService);
 $userA->notifyUser("Welcome!");
 
 echo "\n";
 
 $smsService = new SmsNotifier();
-$userB = new UserController($smsService);
+$userB = new UserControllerTest($smsService);
 $userB->notifyUser("Your code is 1234!");
 
 
