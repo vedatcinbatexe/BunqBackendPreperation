@@ -32,7 +32,6 @@
         // Data & Web Interactions
         > HTTP Basics
         > JSON Handling
-        > File System
 
         // Database Interaction (PDO)
         > PDO (PHP Data Objects)
@@ -41,6 +40,11 @@
         > Error Handling
         > Composer
         > Date & Time
+
+        // Frameworks & Libraries
+        > Slim Framework
+        > Laravel Framework
+        > Eloquent
 
     > Phase 2: MySQL (2 DAY)
     > Phase 3: Redis / Elastisearch (3 DAY)
