@@ -34,11 +34,11 @@
         > JSON Handling
 
         // Database Interaction (PDO)
-        > PDO (PHP Data Objects)
+        [+] PDO (PHP Data Objects)
 
         // Advanced & Ecosystem
-        > Error Handling
         > Composer
+        > Error Handling
         > Date & Time
 
         // Frameworks & Libraries
