@@ -1,0 +1,45 @@
+/*
+# What is an RDBMS ?
+    -> MySQL is an RDBMS. Think of a Database as a digital filing cabinet
+    -> Inside that cabinet, you have folders
+    -> In SQL, those folders are "Tables"
+
+    -> The Table: This is where data lives. It is a grid structure containing data about one specific subject: Users, Products, Orders
+    -> The Column: These are the vertical headers. They define "what kind of data" creates a record: FirstName, Age, Email
+    -> The Row: These are the horizontal lines. A row represent "one single item"
+    -> The Primary Key: Every row needs a unique fingerprint to distinguish it from others
+
+    -> Real World Example: E-Commerce App
+        -> Imagine we are building the database for a site like Amazon or Trendyol
+        -> We need a table to store our Customers
+
+        -> Table Name: "Customers"
+            ->  customer_id (PK)    |   full_name   |   email   |   country
+                1                      Alice Smith    alice@..      USA
+                2                      Vedat Cinbat   vedat@..      USA
+                3                      Hiroshi Taka    hiro@..    Japan
+
+
+> Code Practice
+
+    -> Create database and use that database in mysql workbench
+        > CREATE DATABASE sql_course;
+        > USE sql_course;
+
+    -> Create the Table Structure
+        > CREATE TABLE Users (
+            user_id INT AUTO_INCREMENT PRIMARY KEY,
+            username VARCHAR(50),
+            email VARCHAR(100),
+            age INT
+        );
+
+    -> Insert Data
+        > INSERT INTO Users (username, email, age) VALUES ('JohnDoe', 'john@test.com', 28);
+        > INSERT INTO Users (username, email, age) VALUES ('TechGuru', 'techguru@test.com', 32);
+        > INSERT INTO Users (username, email, age) VALUES ('VedatCinbat', 'vedat@test.com', 24);
+
+    -> Verify
+        > SELECT * FROM Users;
+
+*/

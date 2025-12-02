@@ -42,11 +42,57 @@
         > Date & Time
 
         // Frameworks & Libraries
-        > Slim Framework
+        [+] Slim Framework
+        [+] Eloquent
         > Laravel Framework
-        > Eloquent
 
     > Phase 2: MySQL (2 DAY)
+        > Level 1: The Foundation
+            - Introduction to RDBMS
+            - Basic Retrieval
+            - Filtering Data
+            - Ranges & Lists
+            - Sorting & Limiting
+            - Null Values
+
+        > Level 2: Shaping & Aggregating Data
+            - Aggregate Functions
+            - Grouping Results
+            - Built-in Functions
+                - String Functions
+                - Date/Time Functions
+                - Numeric Functions
+            - Aliases
+
+        > Level 3: The Power Of Relations
+            - Joins 101
+            - Outer Joins
+            - Full & Cross Joins
+            - Unions
+            - Database Design Basics
+
+        > Level 4: Advanced Logic & Analytics
+            - Subqueries
+            - CTEs
+            - Window Functions
+            - Views
+            - Case Statements
+
+        > Level 5: Programmability & Data Integrity
+            - Data Manipulation (DML)
+            - Data Definition (DDL)
+            - Constraints
+            - Stored Procedures
+            - Triggers
+            - Transactions
+
+        > Level 6: Performance & Architecture
+            - Indexing
+            - Query Optimization
+            - Normalization
+            - Storage Engines
+            - JSON in MySQL
+
     > Phase 3: Redis / Elastisearch (3 DAY)
     > Phase 4: Testing with PHPUnit | Mockery (3 DAY)
     > Phase 5: REST API Design (2 DAY)
